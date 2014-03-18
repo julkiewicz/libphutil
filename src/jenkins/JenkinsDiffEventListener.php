@@ -31,6 +31,9 @@ class JenkinsDiffEventListener extends PhutilEventListener {
 		$workflow = $event->getValue('workflow');
 		$jenkins_uri = $workflow->getConfigFromAnySource('jenkins.uri');
 		$jenkins_job = $workflow->getConfigFromAnySource('jenkins.job');
+		$jenkins_user = $workflow->getConfigFromAnySource('jenkins.user');
+		$jenkins_token = $workflow->getConfigFromAnySource('jenkins.token');
+
 		
 		if (!$jenkins_uri || !$jenkins_job) {
 			return;
@@ -38,6 +41,11 @@ class JenkinsDiffEventListener extends PhutilEventListener {
  
 		$url = $jenkins_uri."/job/".$jenkins_job."/buildWithParameters?DIFF_ID=".$diff_id;
 
-		file_get_contents($url);
+		$ch = curl_init($url);
+		if ($jenkins_user) {
+			curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+			curl_setopt($ch, CURLOPT_USERPWD, $jenkins_user.':'.$jenkins_token);
+		}
+		curl_exec($ch);
 	}
 }
