@@ -7,8 +7,7 @@
  */
 phutil_register_library_map(array(
   '__library_version__' => 2,
-  'class' =>
-  array(
+  'class' => array(
     'AASTNode' => 'parser/aast/api/AASTNode.php',
     'AASTNodeList' => 'parser/aast/api/AASTNodeList.php',
     'AASTToken' => 'parser/aast/api/AASTToken.php',
@@ -341,8 +340,7 @@ phutil_register_library_map(array(
     'XHPASTTreeTestCase' => 'parser/xhpast/api/__tests__/XHPASTTreeTestCase.php',
     'XsprintfUnknownConversionException' => 'xsprintf/exception/XsprintfUnknownConversionException.php',
   ),
-  'function' =>
-  array(
+  'function' => array(
     'Futures' => 'future/functions.php',
     '_phutil_date_format' => 'utils/viewutils.php',
     '_qsprintf_check_scalar_type' => 'xsprintf/qsprintf.php',
@@ -466,10 +464,8 @@ phutil_register_library_map(array(
     'xsprintf_query' => 'xsprintf/qsprintf.php',
     'xsprintf_uri' => 'xsprintf/urisprintf.php',
   ),
-  'xmap' =>
-  array(
-    'AASTNodeList' =>
-    array(
+  'xmap' => array(
+    'AASTNodeList' => array(
       0 => 'Iterator',
       1 => 'Countable',
     ),
@@ -534,8 +530,7 @@ phutil_register_library_map(array(
     'PhutilArgumentSpecificationException' => 'PhutilArgumentParserException',
     'PhutilArgumentSpecificationTestCase' => 'PhutilTestCase',
     'PhutilArgumentUsageException' => 'PhutilArgumentParserException',
-    'PhutilArray' =>
-    array(
+    'PhutilArray' => array(
       0 => 'Phobject',
       1 => 'Countable',
       2 => 'ArrayAccess',
